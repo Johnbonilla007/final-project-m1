@@ -18,7 +18,7 @@ function productoController() {
       res.status(200).json(result);
 
     })
-    connection.close
+
 
   }
 
@@ -26,6 +26,8 @@ function productoController() {
     connection.connect();
 
     const { producto } = req.body;
+
+
     const test = producto;
     const query = `INSERT INTO Producto (NombreProducto) VALUES('${producto.NombreProducto}')`;
 
@@ -51,9 +53,9 @@ function productoController() {
 
   }
 
-  async function EliminarProducto(req, res){
+  async function EliminarProducto(req, res) {
     connection.connect();
-    const {producto} = req.body;
+    const { producto } = req.body;
     var query = `DELETE FROM Producto WHERE IdProducto = ${producto.IdProducto}`
     connection.query(query, function (error, result) {
 
@@ -62,7 +64,7 @@ function productoController() {
       res.status(200).json({ mensaje: 'todo bien' });
     });
 
-    
+
 
 
 
