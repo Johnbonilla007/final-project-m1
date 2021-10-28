@@ -22,7 +22,6 @@ app.get("/", (req, res) => {
 
 var producto = require("./productos/productoRoutes");
 
-app.post("/rekognition", (req, res) => handleDetectLabels(req, res));
 app.use("/producto", producto);
 
 const server = app.listen(process.env.PORT || 3000, () => {
