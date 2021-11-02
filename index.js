@@ -5,7 +5,6 @@
 const express = require("express");
 
 const app = express();
-const port = 3200;
 
 app.use((req, res, next) => {
   res.append("Access-Control-Allow-Origin", ["*"]);
@@ -28,13 +27,3 @@ const server = app.listen(process.env.PORT || 3000, () => {
   const port = server.address().port;
   console.log(`Express is working on port ${port}`);
 });
-
-const handleDetectLabels = async (req, res) => {
-  let { photo } = req.body;
-
-  if (!photo) {
-    res.status(200).send("Thre isnt a photo");
-
-    return;
-  }
-};
